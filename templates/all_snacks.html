@@ -12,13 +12,23 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <th>Snack</th>
+                <th>Category</th>
                 <th>Price</th>
+                <th>Healthy?</th>
+                <th>Quantity</th>
+                <th>Unit of Measurement</th>
             </thead>
             <tbody>
                 {% for snack in snacks %}
                     <tr>
                         <td>{{snack.name}}</td>
+                        <td>{{snack.category}}
+                            
+                        </td>
                         <td>{{snack.price}}</td>
+                        <td>{{snack.is_healthy}}</td>
+                        <td>{{snack.quantity}}</td>
+                        <td>{{snack.unit_measure}}</td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -6,9 +6,9 @@ db.create_all()
 
 Snack.query.delete()
 
-cool_ranch = Snack(name="Cool Ranch Doritos", price=3.5)
-nacho_chz = Snack(name="Nacho Cheese Doritos", price=3.5)
-og_cheeto = Snack(name="Crunchy Cheetos", price=3.5)
+cool_ranch = Snack(name="Cool Ranch Doritos", category='chips', price=3.5, is_healthy=False, quantity=4, unit_measure="Ounces")
+nacho_chz = Snack(name="Nacho Cheese Doritos", category='chips', price=3.5, is_healthy=False, quantity=4, unit_measure="Ounces")
+og_cheeto = Snack(name="Crunchy Cheetos", category='chips', price=3.5, is_healthy=False, quantity=4, unit_measure="Ounces")
 
 db.session.add(cool_ranch)
 db.session.add(nacho_chz)

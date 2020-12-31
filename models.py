@@ -24,8 +24,24 @@ class Snack(db.Model):
                      nullable=False,
                      unique=False)
     
+    category = db.Column(db.String(20),
+                         nullable=False,
+                         unique=False)
+    
     price = db.Column(db.Float,
                       nullable=False,
                       unique=False)
     
+    is_healthy = db.Column(db.Boolean,
+                           nullable=False,
+                           unique=False)
+    
+    quantity = db.Column(db.Integer,
+                         nullable=False,
+                         unique=False)
+    
+    unit_measure = db.Column(db.String(25),
+                             nullable=False,
+                             unique=False)
+
     

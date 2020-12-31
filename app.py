@@ -25,9 +25,20 @@ def add_snack():
     form = AddSnackForm()
     if form.validate_on_submit():
         name = form.name.data
+        category = form.category.data
         price = form.price.data
-        flash(f"Created new snack: {name}, price of ${price}")
+        is_healthy = form.is_healthy.data
+        quantity = form.quantity.data
+        unit_measure = form.unit_measure.data
+
+        flash(f"Created new snack: {quantity} {unit_measure} of {name}, costing ${price}. Is this snack healthy: {is_healthy}")
+        
+        snack = Snack(name=name, category=category, price=price, is_healthy=is_healthy, quantity=quantity, unit_measure=unit_measure)
+        db.session.add(snack)
+        db.session.commit()
+        
         return redirect('/')
+    
     else:    
         return render_template("add_snack_form.html", form=form)
 

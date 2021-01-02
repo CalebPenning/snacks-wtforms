@@ -20,10 +20,15 @@ class Snack(db.Model):
                    primary_key=True,
                    autoincrement=True)
     
+        
+    email = db.Column(db.String(50),
+                      nullable=False,
+                      unique=False)    
+    
     name = db.Column(db.String(30),
                      nullable=False,
                      unique=False)
-    
+
     category = db.Column(db.String(20),
                          nullable=False,
                          unique=False)

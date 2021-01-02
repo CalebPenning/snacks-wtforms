@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Add Snack</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="container-fluid">
-    <h1 class="display-2">New Snack</h1>
+    <h1 class="display-2">Edit Snack</h1>
     <form method="POST">
             {{ form.hidden_tag() }}
         {% for field in form if field.widget.input_type != 'hidden' %}
@@ -16,14 +16,10 @@
         <p>
             {{field.label}}
             {{field}}
-
-            {% for err in field.errors %}
-            {{ err }}
-            {% endfor %}
         </p>
         </div>
         {% endfor %}
-        <button type="submit">Submit Snack</button>    
+        <button type="submit">Save Snack</button>    
     </form>
     </div>
 </body>

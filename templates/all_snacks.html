@@ -11,26 +11,33 @@
         <h1 class="display-1">All Snacks</h1>
         <table class="table table-striped">
             <thead class="thead-dark">
+                <th>User Email</th>
                 <th>Snack</th>
                 <th>Category</th>
                 <th>Price</th>
                 <th>Healthy?</th>
                 <th>Quantity</th>
                 <th>Unit of Measurement</th>
+                <th>Edit Snack</th>
             </thead>
             <tbody>
                 {% for snack in snacks %}
                     <tr>
+                        <td>{{snack.email}}</td>
                         <td>{{snack.name}}</td>
                         <td>{{snack.category}}</td>
                         <td>{{snack.price}}</td>
                         <td>{{snack.is_healthy}}</td>
                         <td>{{snack.quantity}}</td>
                         <td>{{snack.unit_measure}}</td>
+                        <td><a href="/snacks/{{snack.id}}/edit"><i class="fa fa-pencil-square"></i></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <button><a href="/snacks/new">Add New Snack</a></button>
     </div>
+
+<script src="https://use.fontawesome.com/5c23010372.js"></script>
 </body>
 </html>

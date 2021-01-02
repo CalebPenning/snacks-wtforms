@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
     <h1 class="display-2">Edit Snack</h1>
     <form method="POST">
             {{ form.hidden_tag() }}
@@ -16,6 +16,10 @@
         <p>
             {{field.label}}
             {{field}}
+
+            {% for err in field.errors %}
+            <p class="text-danger">{{ err }}</p>
+            {% endfor %}
         </p>
         </div>
         {% endfor %}

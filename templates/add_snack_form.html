@@ -18,12 +18,13 @@
             {{field(class_="form-control")}}
 
             {% for err in field.errors %}
-            <p class="text-danger">{{ err }}</p>
+            <small class="form-text text-danger">{{ err }}</small>
             {% endfor %}
         </p>
         </div>
         {% endfor %}
-        <button type="submit">Submit Snack</button>    
+        <button type="submit" class="btn btn-primary">Submit Snack</button>
+        <a href="/snacks/all" class="btn btn-danger">Go Back</a>    
     </form>
     </div>
 </body>
